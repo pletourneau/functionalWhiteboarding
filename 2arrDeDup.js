@@ -18,3 +18,31 @@ function arrDeDup(arr) {
 }
 
 // still need recursion and filter
+//WITH FILTER
+
+function remDupFilter(arr) {
+  return arr.filter(function (element, index) {
+    return arr.indexOf(element) === index;
+  });
+}
+
+//WITH RECURSION
+// Example
+// Input: [7, 9, "hi", 12, "hi", 7, 53]
+
+// Output: [7, 9, "hi", 12, 53]
+
+function remDup(arr) {
+  if (arr.length === 0) {
+    return [];
+  }
+
+  const tester = arr[0];
+  const modArr = arr.slice(1);
+
+  if (modArr.includes(tester)) {
+    return remDup(modArr);
+  } else {
+    return [tester].concat(remDup(modArr));
+  }
+}
