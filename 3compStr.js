@@ -24,44 +24,21 @@ function compStr(str) {
 
 //WITH RECURSION
 
-function compStrRec(str) {
+function compStrRec(str, tempC) {
   if (str.length === 0) {
     return "";
   }
-
-  let tempC = 1;
   let res = "";
 
-  function compStrRec(str) {
-    if (str.length === 0) {
-      return "";
-    }
-  
-    let tempC = 1;
-    let res = "";
-  
-    if (str[0] === str[1]) {
-      tempC++;
-      console.log(tempC);
-    } else if (tempC > 1) {
-      let tempStrNum = tempC.toString();
-      console.log(tempStrNum);
-      console.log(tempC);
-      res = res + tempStrNum + str[0];
-      tempC = 1;
-    } else {
-      res += str[0];
-    }
-    return res + compStrRec(str.slice(1));
-  }
+  if (str[0] === str[1]) {
+    tempC++;
+    console.log(tempC);
   } else if (tempC > 1) {
     let tempStrNum = tempC.toString();
-    console.log(tempStrNum);
-    console.log(tempC);
     res = res + tempStrNum + str[0];
     tempC = 1;
   } else {
     res += str[0];
   }
-  return res + compStrRec(str.slice(1));
+  return res + compStrRec(str.slice(1), tempC);
 }
