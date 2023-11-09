@@ -14,5 +14,18 @@
 // Output: [2, 7, 9, 12]
 
 function arrSort(arr) {
-  for (let i = 1; i < arr.length; i++) {}
+  if (arr.length < 1) {
+    console.log(res);
+    return arr;
+  }
+
+  let res = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > arr[i + 1]) {
+      res.push(arr.shift());
+    } else {
+      res.splice(0, 0, arr.shift());
+    }
+  }
+  arrSort(arr);
 }
