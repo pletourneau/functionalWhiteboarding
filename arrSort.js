@@ -18,6 +18,6 @@ function arrSort(arr) {
   let min = Math.min(arr);
 }
 
-function techRt(arr) {
-  return arr.toSorted((a, b) => a - b);
-}
+// function techRt(arr) {
+//   return arr.toSorted((a, b) => a - b);
+// }

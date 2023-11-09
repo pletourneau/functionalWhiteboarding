@@ -23,3 +23,17 @@ function StrToUrl(str) {
 // 1. use split to mutate into array
 // 2. iterate with for loop. if it hits a space at 'i', it is replaced (1 instead of 0, which would just insert) with '%20'
 // 3. strArr is still an array... output looks like a string. arr.join("") to turn back into string. Quotes are needed as argument, otherwise it will have unsightly commas
+
+//WITH RECURSION
+
+function strToUrlRec(str) {
+  if (str.length === 0) {
+    return "";
+  }
+
+  if (str[0] === " ") {
+    return "%20" + strToUrlRec(str.slice(1));
+  } else {
+    return str[0] + strToUrlRec(str.slice(1));
+  }
+}
