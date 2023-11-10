@@ -23,6 +23,7 @@ function arrDeDup(arr) {
 function remDupFilter(arr) {
   return arr.filter(function (element, index) {
     return arr.indexOf(element) === index;
+    //if the index matches the index of the first occurance, it is added to the array
   });
 }
 
